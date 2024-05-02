@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Gestionnaire Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Gestionnaire Dashboard</h2>
+    <p>Welcome, {{ user.username }}! You can view and edit files.</p>
+    <!-- Add a button to navigate to the edit files page -->
+    <a href="{% url 'gestionnaire_edit_files' %}" class="btn btn-primary">Edit Files</a>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processing Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #333;
+            padding: 10px 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Processing Results</h1>
+    {% if results_html %}
+        {% for html_table in results_html %}
+            <div class="container">
+                {{ html_table|safe }}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No data available. Please upload and process some files.</p>
+    {% endif %}
+
+    <a href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>
